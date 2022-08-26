@@ -1,0 +1,13 @@
+{
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.editor": "json",
+    "workbench.settings.openDefaultSettings": true,
+    "editor.tokenColorCustomizations": {
+    
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+     },
+     "css.validate": false,
+     "editor.inlineSuggest.enabled": true
+}
