@@ -8,14 +8,25 @@ import { app } from "../firebase/firebase.config";
 
 import Logo from '../assets/hot.png';
 import Avatar from '../assets/user.png';
+import { useStateValue } from "../context/StateProvider";
+import { actionType } from '../context/reducer'
 
 
 const Header = () => { 
     const firebaseAuth = getAuth(app);
     const provider = new GoogleAuthProvider();
+
+    const [{user},dispatch] = useStateValue();
   const login = async () => {
-    const response = await signInWithPopup(firebaseAuth, provider);
-    console.log(response);  
+    if(!user){
+        const { user:{refreshToken, providerData}} = await signInWithPopup(firebaseAuth, provider);
+    dispatch({
+        type: actionType.SET_USER,
+        user: providerData[0],
+    });
+
+    localStorage.setItem('user', JSON.stringify(providerData[0]));
+    }
   }
 
   return (
@@ -41,9 +52,8 @@ const Header = () => {
                         <p className="text-xs text-white font-semibold">0</p>
                     </div>
                 </div>
-
                 <div className="relative">
-                    <motion.img whileTap={{scale : 0.6}} src={Avatar} className="w-6 min-w-[28px] h-6 min-h-[28px] shadow-xl cursor-pointer" alt="userprofile" onClick={login}/>
+                    <motion.img whileTap={{scale : 0.6}} src={user ? user.photoURL : Avatar} className="w-6 min-w-[28px] h-6 min-h-[28px] shadow-xl cursor-pointer rounded-full" alt="userprofile" onClick={login}/>
                 </div>
             </div>
         </div>
