@@ -16,5 +16,4 @@ root.render(
         <StateProvider initialState={initialState} reducer={reducer}>
             <App />
         </StateProvider>
-    </Router>,
-document.getElementById("root"));
+    </Router>);
