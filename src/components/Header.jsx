@@ -45,7 +45,7 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed z-50 w-screen p-4 px-6 md:p-5 md:px-16">
+    <header className="fixed z-50 w-screen p-4 px-6 md:p-5 md:px-16 bg-gray-50">
       {/* -----------Desktop and Tablet----------*/}
       {/* ================= LOGO REGION ======================= */}
       <div className="hidden md:flex w-full h-full items-center justify-between">
@@ -62,16 +62,20 @@ const Header = () => {
             exit={{ opacity: 0 }}
             className="flex items-center gap-8"
           >
-            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer">
+            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer"
+            onClick={() => setMenu(false)}>
               Home
             </li>
-            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer">
+            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer"
+            onClick={() => setMenu(false)}>
               Menu
             </li>
-            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer">
+            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer"
+            onClick={() => setMenu(false)}>
               About Us
             </li>
-            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer">
+            <li className="text-base text-red-300 hover:text-red-400 duration-100 transition-all ease-in-out cursor-pointer"
+            onClick={() => setMenu(false)}>
               Services
             </li>
           </motion.ul>
@@ -90,6 +94,7 @@ const Header = () => {
               className="w-8 min-w-[28px] h-8 min-h-[28px] shadow-xl cursor-pointer rounded-full"
               alt="userprofile"
               onClick={login}
+              referrerPolicy="no-referrer"
             />
             {isMenu && (
               <motion.div
@@ -103,6 +108,7 @@ const Header = () => {
                     <p
                       className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-red-300
                             transition-all duration-100 ease-in-out"
+                       onClick={() => setMenu(false)}
                     >
                       New Item <MdAdd />
                     </p>
@@ -164,16 +170,20 @@ const Header = () => {
               
               <ul className="flex flex-col"
               >
-                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer">
+                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer"
+                onClick={() => setMenu(false)}>
                   Home
                 </li>
-                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer">
+                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer"
+                onClick={() => setMenu(false)}>
                   Menu
                 </li>
-                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer">
+                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer"
+                onClick={() => setMenu(false)}>
                   About Us
                 </li>
-                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer">
+                <li className="text-base px-4 py-2 hover:bg-red-300 duration-100 transition-all ease-in-out cursor-pointer"
+                onClick={() => setMenu(false)}>
                   Services
                 </li>
               </ul>

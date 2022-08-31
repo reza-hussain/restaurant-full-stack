@@ -9,8 +9,7 @@ const App = () => {
     <AnimatePresence exitBeforeEnter> {/*Exit before entering avoids toggle animations to start when the page loads*/}
         <div className="w-screen h-auto flex flex-col bg-gray-50">
             <Header />
-
-            <main className="mt-16 md:mt-20 px-6 md:px-16 py-4 w-full">
+            <main className="mt-16 md:mt-20 px-6 md:px-16 py-4 w-full overflow-x-hidden">
                 <Routes>
                     <Route path="/" element={<MainContainer />}/>
                     <Route path="/createItem" element={<CreateContainer />}/>
