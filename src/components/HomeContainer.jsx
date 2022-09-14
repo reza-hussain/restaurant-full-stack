@@ -2,8 +2,7 @@ import React from "react";
 
 import Delivery from "../assets/delivery-man.png";
 import heroBG from "../assets/heroBg.png";
-import Icecream from "../assets/icecream.png";
-import {heroData} from '../utils/data';
+import { heroData } from '../utils/data';
 
 const HomeContainer = () => {
   
