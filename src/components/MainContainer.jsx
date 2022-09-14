@@ -5,14 +5,15 @@ import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import RowContainer from "./RowContainer";
 import {useStateValue} from '../context/StateProvider';
 import MenuContainer from "./MenuContainer";
+import CartContainer from "./CartContainer";
 
 const MainContainer = () => {
-  const [{foodItems}, dispatch] = useStateValue()
+  const [{foodItems, cartShow}, dispatch] = useStateValue()
   const [scrollValue, setScrollValue] = useState();
 
   useEffect(() => {
 
-  }, [scrollValue])
+  }, [scrollValue, cartShow])
 
   return (
     <div className="w-full h-auto overflow-x-hidden flex flex-col justify-center">
@@ -53,6 +54,8 @@ const MainContainer = () => {
 
       <section className="w-full my-6">
         <MenuContainer />
+        
+        {cartShow && <CartContainer />}
       </section>
     </div>
   );

@@ -15,7 +15,7 @@ const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  const [{ user }, dispatch] = useStateValue(); //Custom hook in State provider.js
+  const [{ user, cartShow }, dispatch] = useStateValue(); //Custom hook in State provider.js
 
   const [isMenu, setMenu] = useState(false); //Toggling the profile menu to open and close
   const login = async () => {
@@ -42,6 +42,13 @@ const Header = () => {
         type: actionType.SET_USER,
         user: null
     });
+  }
+
+  const showCart = () => {
+    dispatch({
+      type: actionType.SET_CART_SHOW,
+      cartShow : !cartShow
+    })
   }
 
   return (
@@ -80,7 +87,7 @@ const Header = () => {
             </li>
           </motion.ul>
           {/* ================= SHOPPING CART AND PROFILE REGION ======================= */}
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center" onClick={showCart}>
             <MdShoppingBasket className="text-red-300 text-2xl ml-8 cursor-pointer" />
             <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-gray-400 flex items-center justify-center">
               <p className="text-xs text-white font-semibold">0</p>
@@ -130,7 +137,7 @@ const Header = () => {
       
       <div className="flex items-center justify-between md:hidden w-full h-full">
         {/* ================= CART REGION ======================= */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center" onClick={showCart}>
             <MdShoppingBasket className="text-red-300 text-2xl cursor-pointer" />
             <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-gray-400 flex items-center justify-center">
               <p className="text-xs text-white font-semibold">0</p>

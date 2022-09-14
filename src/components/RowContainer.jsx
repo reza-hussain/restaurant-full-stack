@@ -58,7 +58,7 @@ const RowContainer = ({ flag, data, scrollValue }) => {
       </div>
       )}
     </div>
-  );
+  ); 
 };
 
 export default RowContainer;
