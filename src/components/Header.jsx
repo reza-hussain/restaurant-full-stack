@@ -21,7 +21,7 @@ const Header = () => {
   const login = async () => {
     if (!user) {
       const {
-        user: { refreshToken, providerData },
+        user: { providerData },
       } = await signInWithPopup(firebaseAuth, provider); //fetching refreshtoken and provider data from google
       dispatch({
         type: actionType.SET_USER,

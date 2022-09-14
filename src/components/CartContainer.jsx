@@ -28,7 +28,7 @@ const CartContainer = () => {
         <div className="w-full flex items-center justify-between p-4 cursor-pointer">
             <motion.button whileTap={{scale:0.75}}>
                 
-                <MdOutlineKeyboardBackspace className="text-textColor text-3xl" />
+                <MdOutlineKeyboardBackspace className="text-textColor text-3xl" onClick={showCart} />
             
             </motion.button>
 
